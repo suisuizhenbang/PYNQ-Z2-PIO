@@ -1,0 +1,1 @@
+启动后LED0到LED3共同闪烁三次，间隔时间为0.5s，然后读取BTN0到BTN3的状态，每次按下BTN0则切换一次LED0的显示状态，按下BTN1则切换一次LED1的显示状态，依此类推BTN2对应LED2，BTN3对应LED3。读取Switch的状态，当SW0拨到ON状态，则rgbLED4显示黄色，当SW0拨到OFF状态时，则rgbLED4熄灭。当SW1拨到ON状态，则rgbLED5显示绿色，当SW1拨到OFF状态时，则rgbLED5熄灭。

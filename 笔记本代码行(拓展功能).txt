@@ -1,0 +1,75 @@
+from pynq.overlays.base import BaseOverlay
+base=BaseOverlay("base.bit")
+
+from time import sleep
+
+Delay=0.5
+
+base.leds[0].on()
+base.leds[1].on()
+base.leds[2].on()
+base.leds[3].on()
+sleep(Delay)
+base.leds[0].off()
+base.leds[1].off()
+base.leds[2].off()
+base.leds[3].off()
+sleep(Delay)
+base.leds[0].on()
+base.leds[1].on()
+base.leds[2].on()
+base.leds[3].on()
+sleep(Delay)
+base.leds[0].off()
+base.leds[1].off()
+base.leds[2].off()
+base.leds[3].off()
+sleep(Delay)
+base.leds[0].on()
+base.leds[1].on()
+base.leds[2].on()
+base.leds[3].on()
+sleep(Delay)
+base.leds[0].off()
+base.leds[1].off()
+base.leds[2].off()
+base.leds[3].off()
+sleep(Delay)
+
+while(1):
+    #Read the buttons and control leds to flash
+    if(base.buttons[0].read() == 1):
+        base.leds[0].toggle()
+        base.leds[1].off
+        base.leds[2].off
+        base.leds[3].off
+        
+    elif(base.buttons[1].read() == 1):
+        base.leds[1].toggle()
+        base.leds[0].off
+        base.leds[2].off
+        base.leds[3].off
+        
+    elif(base.buttons[2].read() == 1):
+        base.leds[2].toggle()
+        base.leds[0].off
+        base.leds[1].off
+        base.leds[3].off
+        
+    elif(base.buttons[3].read() == 1):
+        base.leds[3].toggle()
+        base.leds[0].off
+        base.leds[1].off
+        base.leds[2].off
+        
+    if(base.switches[0].read()==1):
+        base.rgbleds[4].on(6)
+    else:
+        base.rgbleds[4].off()
+        
+    if(base.switches[1].read()==1):
+        base.rgbleds[5].on(2)
+    else:
+        base.rgbleds[5].off()
+    
+    sleep(Delay)
